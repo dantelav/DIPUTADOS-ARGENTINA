@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nombres de calles argentinas</title>
+<meta name="description" content="Quién fue cada nombre de calle de la Argentina. Escaneá el QR del cartel.">
+<meta property="og:title" content="Nombres de calles argentinas">
+<meta property="og:description" content="Quién fue cada nombre de calle de la Argentina. Escaneá el QR del cartel.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+<header class="top"><a href="./" class="marca">Nombres de calles <span>argentinas</span></a></header>
+<main>
+<section class="hero">
+<h1>Cada calle tiene<br>una historia.</h1>
+<p>Escaneá el QR del cartel de tu esquina y conocé quién fue, qué pasó o qué lugar recuerda ese nombre.</p>
+</section>
+<section><h2>Barrios</h2><div class="tarjetas"><a class="tarjeta" href="b/parque-chas/"><strong>Parque Chas</strong><span></span></a></div></section>
+<section><h2>Calles</h2>
+<input id="buscar" type="search" placeholder="Buscar una calle…" aria-label="Buscar una calle">
+<ul class="calles" id="lista"><li data-q="altolaguirre prueba"><a href="c/prueba/"><strong>Altolaguirre</strong><span>Prueba</span></a></li></ul>
+</section>
+<script>
+document.getElementById('buscar').addEventListener('input', function () {
+  var q = this.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  document.querySelectorAll('#lista li').forEach(function (li) {
+    var t = li.dataset.q.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    li.hidden = q && t.indexOf(q) === -1;
+  });
+});
+</script>
+</main>
+<footer class="pie">
+<p>Proyecto ciudadano para que cada cartel de calle cuente su historia.</p>
+<p>Imágenes reales de Wikimedia Commons, con su autor y licencia en cada página. ¿Encontraste un error? Escribinos.</p>
+</footer>
+</body>
+</html>

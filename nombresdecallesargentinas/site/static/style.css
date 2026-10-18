@@ -1,0 +1,98 @@
+:root {
+  --fondo: #f6f4ef;
+  --texto: #1d1c1a;
+  --suave: #6b675f;
+  --linea: #ddd8cc;
+  --cartel: #111;
+  --cartel-texto: #fff;
+  --acento: #1f5fa8;
+  --tarjeta: #fff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #151514;
+    --texto: #ece9e2;
+    --suave: #a29d92;
+    --linea: #34322e;
+    --cartel: #000;
+    --acento: #7fb0ea;
+    --tarjeta: #1f1e1c;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--texto);
+  font: 18px/1.6 "Source Serif 4", Georgia, serif;
+}
+a { color: var(--acento); }
+main { max-width: 680px; margin: 0 auto; padding: 0 16px 48px; }
+h1, h2, .marca, .tipo, .chip, .cartel, .tarjeta strong, .calles strong {
+  font-family: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+h1 { font-size: 2.4rem; line-height: 1.05; margin: 4px 0 6px; }
+h2 { font-size: 1.15rem; text-transform: uppercase; letter-spacing: .06em; color: var(--suave); margin: 36px 0 12px; }
+
+.top { border-bottom: 1px solid var(--linea); padding: 12px 16px; }
+.marca { color: var(--texto); text-decoration: none; font-weight: 700; font-size: 1.15rem; text-transform: uppercase; letter-spacing: .04em; }
+.marca span { color: var(--suave); }
+
+/* Réplica del cartel porteño: negro, letras blancas */
+.cartel {
+  background: var(--cartel);
+  color: var(--cartel-texto);
+  border-radius: 6px;
+  margin: 20px 0 24px;
+  padding: 14px 18px 10px;
+  border: 3px solid var(--cartel);
+  box-shadow: inset 0 0 0 2px #fff;
+}
+.cartel-nombre { font-size: 2.1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; line-height: 1.1; }
+.cartel-barrio { font-size: .95rem; text-transform: uppercase; letter-spacing: .12em; opacity: .75; }
+
+.tipo { margin: 0; text-transform: uppercase; letter-spacing: .1em; font-size: .95rem; color: var(--suave); font-weight: 600; }
+.fechas { margin: 0 0 18px; color: var(--suave); }
+
+.foto { margin: 0 0 20px; }
+.foto img { width: 100%; height: auto; max-height: 70vh; object-fit: contain; background: var(--tarjeta); border-radius: 4px; display: block; }
+.foto figcaption { font-size: .8rem; color: var(--suave); margin-top: 6px; line-height: 1.4; }
+.credito { display: block; }
+
+.texto p { margin: 0 0 1em; }
+
+.chip {
+  display: inline-block; margin: 0 8px 8px 0; padding: 4px 12px;
+  border: 1px solid var(--linea); border-radius: 999px; background: var(--tarjeta);
+  text-decoration: none; color: var(--texto); font-weight: 600; font-size: 1.05rem;
+}
+.tramo { font-size: .9rem; color: var(--suave); margin: 4px 0 0; }
+
+.fuentes ul, .curiosidades ul { padding-left: 1.1em; font-size: .9rem; }
+.fuentes li { margin-bottom: 4px; word-break: break-word; }
+.curiosidades li { margin-bottom: 8px; }
+
+.hero h1 { font-size: 3rem; margin-top: 32px; }
+.hero p { font-size: 1.1rem; color: var(--suave); }
+
+.tarjetas { display: grid; gap: 12px; }
+.tarjeta {
+  display: block; padding: 14px 16px; background: var(--tarjeta); border: 1px solid var(--linea);
+  border-radius: 6px; text-decoration: none; color: var(--texto);
+}
+.tarjeta strong { display: block; font-size: 1.5rem; }
+.tarjeta span { color: var(--suave); font-size: .95rem; }
+
+#buscar {
+  width: 100%; padding: 10px 12px; font: inherit; border: 1px solid var(--linea);
+  border-radius: 6px; background: var(--tarjeta); color: var(--texto); margin-bottom: 12px;
+}
+.calles { list-style: none; padding: 0; margin: 0; }
+.calles li { border-bottom: 1px solid var(--linea); }
+.calles a { display: block; padding: 10px 2px; text-decoration: none; color: var(--texto); }
+.calles strong { display: block; font-size: 1.3rem; text-transform: uppercase; }
+.calles span { color: var(--suave); font-size: .95rem; }
+
+.pie { max-width: 680px; margin: 0 auto; padding: 24px 16px 40px; border-top: 1px solid var(--linea); font-size: .85rem; color: var(--suave); }
